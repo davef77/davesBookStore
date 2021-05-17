@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'static/style.css') }}">
+    <title>Dave's Book Store</title>
+</head>
+<body>
+{% block content %}
+    <h1>Dave's Book Store</h1>
+    {% for book in books %}
+    <a href="#">
+        <h2>{{ book['title'] }}</h2>
+    </a>
+    <span class="badge badge-primary">{{ book['author'] }}</span>
+    <hr>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>
