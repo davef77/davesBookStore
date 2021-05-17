@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock
 
-from store import Store
+from bookstore.store import Store
 
 
 class StoreTest(unittest.TestCase):
