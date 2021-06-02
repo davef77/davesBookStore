@@ -14,7 +14,7 @@ jobs:
     env:
       NODE_ENV: test
       SELENIUM_HUB_HOST: hub
-      TEST_HOST: testHost
+      TEST_HOST: testHost:5000
 
     services:
       hub:
@@ -34,37 +34,3 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Acceptance Tests
         run: python -m pytest tests/acceptance
-
-#  start_release_candidate:
-#    runs-on: ubuntu-latest
-#    services:
-#      bookstore:
-#        image: 'davef77/davesbookstore'
-#        ports:
-#          - 5000:5000
-#
-#    steps:
-#    - name: Confirm RC Ready
-#      run: http://0.0.0.0:5000
-#
-#  acceptance_test:
-#    runs-on: ubuntu-latest
-#    needs: start_release_candidate
-#
-#    steps:
-##    - name: Acceptance Test with pytest
-##      run: |
-##       python -m pytest tests/acceptance
-#
-#    - name: Prepare Selenium
-#      # https://github.com/marketplace/actions/setup-chromedriver
-#      uses: nanasess/setup-chromedriver@master
-#
-#    - name: Start XVFB
-#      run: sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-#
-#    - name: Run tests
-#      run: python -m pytest tests/acceptance
-##           run: pipenv run python manage.py test functional_tests.tests.test_selenium.test_exams -v 2
-#      env:
-#        DISPLAY: :99

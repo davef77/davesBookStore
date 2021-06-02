@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from selenium import webdriver
 
-BOOK_STORE_URL_ = 'http://localhost:5000/'
+BOOK_STORE_URL_ = 'http://testHost:5000/'
 
 
 class WebBookstoreProtocolDriver(TestCase):
