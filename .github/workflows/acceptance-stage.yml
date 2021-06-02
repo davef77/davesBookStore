@@ -9,10 +9,17 @@ on:
 jobs:
   start_release_candidate:
     runs-on: ubuntu-latest
-    container:
-      image: 'davef77/davesbookstore'
+    services:
+      bookstore:
+        image: 'davef77/davesbookstore'
+        ports: 5000:5000
+
+    steps:
+      - name: Confirm RC Ready
+      run: http://localhost:5000
 
   acceptance_test:
+    needs: start_release_candidate
     runs-on: ubuntu-latest
 
     steps:
