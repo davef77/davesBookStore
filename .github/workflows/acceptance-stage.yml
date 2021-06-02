@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: Confirm RC Ready
-      run: http://localhost:5000
+      run: http://0.0.0.0:5000
 
   acceptance_test:
     runs-on: ubuntu-latest
