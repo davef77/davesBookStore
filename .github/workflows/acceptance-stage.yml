@@ -15,7 +15,7 @@ jobs:
         ports: 5000:5000
 
     steps:
-      - name: Confirm RC Ready
+      - name: 'Confirm RC Ready'
       run: http://localhost:5000
 
   acceptance_test:
@@ -23,6 +23,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Acceptance Test with pytest
+      - name: 'Acceptance Test with pytest'
         run: |
           python -m pytest tests/acceptance
