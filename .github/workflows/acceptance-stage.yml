@@ -20,10 +20,21 @@ jobs:
       run: http://localhost:5000
 
   acceptance_test:
-    needs: start_release_candidate
     runs-on: ubuntu-latest
+    needs: start_release_candidate
 
     steps:
-    - name: Acceptance Test with pytest
+#    - name: Acceptance Test with pytest
+#      run: |
+#       python -m pytest tests/acceptance
+    - name: Prepare Selenium
+      # https://github.com/marketplace/actions/setup-chromedriver
+      uses: nanasess/setup-chromedriver@master
+    - name: Start XVFB
       run: |
-       python -m pytest tests/acceptance
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional, disables headless mode
+   - name: Run tests
+       run: python -m pytest tests/acceptance
+#           run: pipenv run python manage.py test functional_tests.tests.test_selenium.test_exams -v 2
+      env:
+        DISPLAY: :99
