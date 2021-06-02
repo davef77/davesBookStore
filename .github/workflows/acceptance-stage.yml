@@ -10,8 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: node:14.4
-      options: --network-alias testHost
+      image: 'davef77/davesbookstore'
     env:
       NODE_ENV: test
       SELENIUM_HUB_HOST: hub
@@ -29,7 +28,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1.2.0
-      - name: Install
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Acceptance Tests
         run: python -m pytest tests/acceptance
 #  start_release_candidate:
 #    runs-on: ubuntu-latest
