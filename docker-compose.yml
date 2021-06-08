@@ -1,0 +1,21 @@
+version: '3.8'
+
+networks:
+  web:
+    external: true
+    driver:  bridge
+
+services:
+  chrome:
+    image: selenium/standalone-chrome:latest
+    hostname: chrome
+    networks:
+      - web
+    privileged: true
+    shm_size: 2g
+  framework:
+    build: .
+    networks:
+      - web
+    depends_on:
+      - chrome
