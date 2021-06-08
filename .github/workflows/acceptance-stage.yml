@@ -9,26 +9,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-#    container:
-#      image: 'davef77/davesbookstore'
-#    env:
-#      NODE_ENV: test
-#      SELENIUM_HUB_HOST: hub
-#      TEST_HOST: testHost:5000
 
     services:
       selenium:
         image: selenium/standalone-chrome
-#      hub:
-#        image: selenium/hub:3.141.59-gold
-#      firefox:
-#        image: selenium/node-firefox:3.141.59-gold
-#        env:
-#          HUB_HOST: hub
-#          HUB_PORT: 4444
+        ports:
+          - 4444:4444
 
       bookstore:
         image: 'davef77/davesbookstore'
+        ports:
+          - 5000:5000
 
     steps:
       - name: Checkout
