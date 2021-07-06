@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      selenium:
-        image: selenium/standalone-chrome
-        ports:
-          - 4444:4444
+#      selenium:
+#        image: selenium/standalone-chrome
+#        ports:
+#          - 4444:4444
 
       bookstore:
         image: 'davef77/davesbookstore'
