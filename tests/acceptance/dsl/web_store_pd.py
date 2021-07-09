@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 
-BOOK_STORE_URL_ = 'http://bookstore:5000/'
+BOOK_STORE_URL_ = 'http://localhost:5000/'
 
 
 class WebBookstoreProtocolDriver(TestCase):
