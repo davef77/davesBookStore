@@ -19,7 +19,7 @@ jobs:
       bookstore:
         image: 'davef77/davesbookstore'
         ports:
-          - 5000:5000
+          - localhost:5000:5000
 
     steps:
 #      - name: Checkout
