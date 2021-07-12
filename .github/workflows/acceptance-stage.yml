@@ -11,11 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-#      selenium:
-#        image: selenium/standalone-chrome
-#        ports:
-#          - 4444:4444
-
       bookstore:
         image: 'davef77/davesbookstore'
         ports:
@@ -24,15 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1.2.0
-#      - name: Install dependencies
-#        run: |
-#          python -m pip install --upgrade pip
-#          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-#      - name: Acceptance Tests
-#        run: python -m pytest tests/acceptance
-#
-#      - name: Start selenoid
-#        uses: Xotabu4/selenoid-github-action@v1
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
