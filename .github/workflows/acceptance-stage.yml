@@ -41,4 +41,5 @@ jobs:
       - name: Acceptance Tests
         run: |
           ping bookstore
+          ping localhost
           python -m pytest tests/acceptance
