@@ -26,6 +26,7 @@ class WebBookstoreProtocolDriver(TestCase):
         self.assertEquals(self.browser.title, "Dave's Book Store")
 
     def visit_store(self):
-        print("bookstore address:" + os.environ.get('BOOKSTORE_HOST') + ":" + os.environ.get('BOOKSTORE_PORT'))
-        self.browser.get(os.environ.get('BOOKSTORE_HOST') + ":" + os.environ.get('BOOKSTORE_PORT'))
+        url = "http://" + os.environ.get('BOOKSTORE_HOST') + ":" + os.environ.get('BOOKSTORE_PORT')
+        print("bookstore address: " + url)
+        self.browser.get(url)
         # self.browser.get(self.bookstore_url)
