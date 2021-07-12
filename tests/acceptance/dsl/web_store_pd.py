@@ -10,9 +10,12 @@ BOOK_STORE_URL_ = 'http://localhost:5000/'
 
 class WebBookstoreProtocolDriver(TestCase):
     def setUp(self):
-        self.browser = webdriver.Remote(
-            command_executor='http://localhost:4444/wd/hub',
-            desired_capabilities=DesiredCapabilities.CHROME)
+        # self.browser = webdriver.Remote(
+        #     command_executor='http://localhost:4444/wd/hub',
+        #     desired_capabilities=DesiredCapabilities.CHROME)
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        self.browser = webdriver.Chrome(options=chrome_options)
         # options = Options()
         # options.headless = True
         # # self.bookstore_url = self.live_server_url
