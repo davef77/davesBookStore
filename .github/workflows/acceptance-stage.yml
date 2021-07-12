@@ -40,7 +40,7 @@ jobs:
       - name: Acceptance Tests
         run: python -m pytest tests/acceptance
         env:
-          BOOKSTORE_HOST: bookstore
+          BOOKSTORE_HOST: localhost
           BOOKSTORE_PORT: 5000
 
 
