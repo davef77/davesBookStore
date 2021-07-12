@@ -34,14 +34,14 @@ jobs:
 #      - name: Start selenoid
 #        uses: Xotabu4/selenoid-github-action@v1
 #      - uses: actions/checkout@v1.2.0
-#      - name: Install dependencies
-#        run: |
-#          python -m pip install --upgrade pip
-#          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Acceptance Tests
         run: python -m pytest tests/acceptance
         env:
-          BOOKSTORE_HOST: localhost
+          BOOKSTORE_HOST: bookstore
           BOOKSTORE_PORT: 5000
 
 
