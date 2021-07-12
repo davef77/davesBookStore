@@ -1,3 +1,4 @@
+import os
 from unittest import TestCase
 
 from selenium import webdriver
@@ -25,5 +26,6 @@ class WebBookstoreProtocolDriver(TestCase):
         self.assertEquals(self.browser.title, "Dave's Book Store")
 
     def visit_store(self):
-        self.browser.get("http://localhost:5000/")
+        print("bookstore address:" + os.environ.get('BOOKSTORE_HOST') + ":" + os.environ.get('BOOKSTORE_PORT'))
+        self.browser.get(os.environ.get('BOOKSTORE_HOST') + ":" + os.environ.get('BOOKSTORE_PORT'))
         # self.browser.get(self.bookstore_url)

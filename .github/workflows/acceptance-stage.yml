@@ -39,6 +39,7 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Acceptance Tests
-        run: |
-          ping localhost
-          python -m pytest tests/acceptance
+        run: python -m pytest tests/acceptance
+        env:
+          BOOKSTORE_HOST: bookstore
+          BOOKSTORE_PORT: 5000
