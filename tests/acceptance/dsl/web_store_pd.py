@@ -25,5 +25,5 @@ class WebBookstoreProtocolDriver(TestCase):
         self.assertEquals(self.browser.title, "Dave's Book Store")
 
     def visit_store(self):
-        self.browser.get(BOOK_STORE_URL_)
+        self.browser.get("http://localhost:5000/")
         # self.browser.get(self.bookstore_url)
