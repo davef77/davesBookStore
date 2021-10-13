@@ -21,3 +21,7 @@ class WebBookstoreProtocolDriver(TestCase):
     def visit_store(self):
         url = "http://" + os.environ.get('BOOKSTORE_HOST') + ":" + os.environ.get('BOOKSTORE_PORT')
         self.browser.get(url)
+
+
+
+

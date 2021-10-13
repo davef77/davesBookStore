@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Dave's Book Store</title>
+</head>
+<body>
+{% block content %}
+<h1>Dave's Book Store - Admin</h1>
+<h2>Add Book</h2>
+<form action="{{ url_for('admin') }}" method="post">
+    Title: <input type="text" name="bookTitle"><br>
+    Author: <input type="text" name="bookAuthor"><br>
+    <input type="submit" value="Add" name="AddButton">
+</form>
+{% endblock %}
+</body>
+</html>

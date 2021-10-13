@@ -13,4 +13,10 @@ class BookShoppingDSL:
     def confirm_in_store(self):
         self.driver.confirm_in_store()
 
+    def search_for_books(self):
+        pass
+
+    def confirm_books_found(self, param, param1):
+        pass
+
 
