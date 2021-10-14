@@ -9,10 +9,10 @@
 {% block content %}
     <h1>Dave's Book Store</h1>
     {% for book in books %}
-    <a href="#">
-        <h2>{{ book['title'] }}</h2>
-    </a>
-    <span class="badge badge-primary">{{ book['author'] }}</span>
+    <div class="book">
+        <div class="title">{{ book['title'] }}</div>
+        <div class="author">{{ book['author'] }}</div>
+    </div>
     <hr>
     {% endfor %}
 {% endblock %}

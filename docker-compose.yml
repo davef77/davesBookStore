@@ -8,12 +8,14 @@ services:
     build: .
     image: myapp
     volumes:
-      - bookstore_db:/bookstore/bookstore_db
+      - bookstore_db:/app/bookstore_db
     command: npm run serve:production
     ports:
       - 8080:5000
     expose:
       - 4200
+    environment:
+      - PYTHONUNBUFFERED=1
 
   app-e2e-tests:
     image: myapp

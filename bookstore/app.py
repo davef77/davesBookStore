@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request
 
 import booklist
+import db
 from store import Store
 
+db.init_db()
 app = Flask(__name__)
 bookstore = Store(book_list=booklist)
 
@@ -15,7 +17,6 @@ def index():
 @app.route('/admin', methods=['POST', 'GET'])
 def admin():
     if request.method == 'POST':
-        print("admin adding a book")
         bookstore.add_book(request.form['bookTitle'], request.form['bookAuthor'])
 
     return render_template('admin.html')

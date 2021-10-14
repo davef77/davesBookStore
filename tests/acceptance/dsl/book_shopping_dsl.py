@@ -1,3 +1,4 @@
+from dsl import params
 from dsl.web_store_pd import WebBookstoreProtocolDriver
 
 
@@ -13,10 +14,7 @@ class BookShoppingDSL:
     def confirm_in_store(self):
         self.driver.confirm_in_store()
 
-    def search_for_books(self):
-        pass
-
-    def confirm_books_found(self, param, param1):
-        pass
-
-
+    def confirm_book_found(self, *args):
+        self.visit_store()
+        title = params.optional(args, 'title', "Continuous Delivery")
+        self.driver.confirm_book_exists(title)

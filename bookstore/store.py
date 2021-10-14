@@ -10,4 +10,5 @@ class Store:
         return books
 
     def add_book(self, title, author):
+        print("Adding book" + title)
         self.books.add([(title, author)])

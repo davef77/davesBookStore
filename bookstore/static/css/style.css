@@ -6,3 +6,15 @@ h1 {
     text-align: center;
     padding: 8px;
 }
+
+.title {
+    font-family: Futura, serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+.author {
+    font-family: "Arial Black", serif;
+    font-size: medium;
+    font-weight: normal;
+}
