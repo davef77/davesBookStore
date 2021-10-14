@@ -13,8 +13,7 @@ class InventoryProtocolDriver(TestCase):
         self.browser.quit()
 
     def _confirm_is_admin(self):
-        url = "http://" + os.environ.get('BOOKSTORE_HOST') + \
-              ":" + os.environ.get('BOOKSTORE_PORT') + "/admin"
+        url = "http://" + os.environ.get('BOOKSTORE_HOST') + ":" + os.environ.get('BOOKSTORE_PORT') + "/admin"
         self.browser.get(url)
         self.assertEqual(self.browser.title, "Dave's Book Store - Admin")
 
