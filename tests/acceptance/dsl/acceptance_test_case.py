@@ -11,7 +11,3 @@ class BookShoppingAcceptanceTestCase(unittest.TestCase):
     def setUp(self):
         self.book_shopping = BookShoppingDSL()
         self.inventory = InventoryDSL()
-
-
-if __name__ == '__main__':
-    unittest.main()
