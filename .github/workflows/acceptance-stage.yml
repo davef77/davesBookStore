@@ -12,7 +12,7 @@ jobs:
 
     services:
       bookstore:
-        image: 'davef77/davesbookstore'
+        image: 'davef77/davesbookstore:1.0'
         ports:
           - 5000:5000
 
